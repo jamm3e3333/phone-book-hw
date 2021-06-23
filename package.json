@@ -1,0 +1,27 @@
+{
+  "name": "phone-book-hw",
+  "version": "1.0.0",
+  "description": "phone-book-hw",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js -e js,css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamm3e3333/phone-book-hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamm3e3333/phone-book-hw/issues"
+  },
+  "homepage": "https://github.com/jamm3e3333/phone-book-hw#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.14",
+    "validator": "^13.6.0"
+  }
+}
