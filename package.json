@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon ./src/app.js -e js,css",
-    "test": "env-cmd -f ./config/test.env "
+    "dev": "env-cmd -f ./config/dev.env nodemon ./src/index.js -e js,css",
+    "test": "env-cmd -f ./config/test.env jest --watch"
   },
   "jest": {
     "testEnvironment": "node"

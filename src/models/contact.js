@@ -8,12 +8,6 @@ const contactSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    surname: {
-        type: String,
-        required: false,
-        unique: false,
-        trim: true
-    },
     title: {
         type: String,
         unique: false,
