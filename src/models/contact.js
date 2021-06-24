@@ -8,6 +8,23 @@ const contactSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    surname: {
+        type: String,
+        required: false,
+        unique: false,
+        trim: true
+    },
+    title: {
+        type: String,
+        unique: false,
+        required: false,
+        trimg: true,
+        validate(value) {
+            if(value.length > 5) {
+                throw new Error("The title cannot be longer than 5 characters.");
+            }
+        }
+    },
     phone: {
         type: String,
         unique: true,
@@ -18,7 +35,8 @@ const contactSchema = new mongoose.Schema({
                 throw new Error("This is not a valid phone number!");
             }
         }
-    }
+    },
+
 },{
     timestamps: true
 });

@@ -31,6 +31,30 @@ app.post('/contact/add', async(req, res) => {
 
 });
 
+app.get('/contacts', async(req, res) => {
+    const sort = {};
+
+    if(req.query.sortBy){
+        const parts = req.query.sortBy.split(':');
+        sort[parts[0]] = parts[1] === 'desc' ? -1 : 1;
+        console.log(sort);
+    }
+    try{
+        const contacts = await Contact.find({
+                limit: parseInt(req.query.limit),
+                skip: parseInt(req.query.skip),
+                sort
+            });
+        res.status(200)
+            .send(contacts);
+
+    }
+    catch(e) {
+        res.status(400)
+            .send({Error: e.message});
+    }
+})
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 })
