@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js -e js,css"
+    "dev": "env-cmd -f ./config/dev.env nodemon ./src/app.js -e js,css",
+    "test": "env-cmd -f ./config/test.env "
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -19,9 +23,14 @@
   },
   "homepage": "https://github.com/jamm3e3333/phone-book-hw#readme",
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.9",
     "mongoose": "^5.12.14",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5",
+    "supertest": "^6.1.3"
   }
 }

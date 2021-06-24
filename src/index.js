@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const Contact = require('./models/contact');
 require('./db/mongodb');
-const port = process.env.PORT || 3000;
+
 
 app.use(express.json());
 
@@ -142,7 +142,4 @@ app.get('*', (req, res) => {
         .send("Not found.");
 });
 
-
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-})
+module.exports = app;
